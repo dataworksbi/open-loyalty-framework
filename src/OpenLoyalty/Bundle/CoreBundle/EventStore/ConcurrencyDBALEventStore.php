@@ -47,7 +47,7 @@ class ConcurrencyDBALEventStore implements EventStore, EventStoreManagement
     /**
      * {@inheritdoc}
      */
-    public function append($id, DomainEventStream $uncommittedEvents)
+    public function append($id, DomainEventStream $uncommittedEvents): void
     {
         try {
             $this->eventStore->append($id, $uncommittedEvents);
@@ -100,9 +100,9 @@ class ConcurrencyDBALEventStore implements EventStore, EventStoreManagement
     /**
      * {@inheritdoc}
      */
-    public function visitEvents(Criteria $criteria, EventVisitor $eventVisitor)
+    public function visitEvents(Criteria $criteria, EventVisitor $eventVisitor): void
     {
-        return $this->visitEvents($criteria, $eventVisitor);
+        $this->visitEvents($criteria, $eventVisitor);
     }
 
     /**

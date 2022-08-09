@@ -26,5 +26,6 @@ OpenLoyalty\Component\Translation\Domain\Language:
         default: 0
     updatedAt:
       type: datetime
+      nullable: true
       options:
-        default: 0
+        default: null
